@@ -1,10 +1,10 @@
-include: 
+include:
     - reqs
     - nginx
 
-uwsgi: 
+uwsgi:
     pip.installed:
-        - pkgs: 
+        - pkgs:
             uwsgi
         - require:
             - pkg: python-dev
@@ -21,7 +21,7 @@ uwsgi-service:
 /etc/init/uwsgi.conf:
     file.managed:
         - source: salt://uwsgi/uwsgi.conf
-        - temlpate: jinja
+        - template: jinja
         - require:
             - pip: uwsgi
 
@@ -32,7 +32,7 @@ uwsgi-service:
         - user: www-data
         - group: www-data
         - makedirs: true
-        - require: 
+        - require:
             - pip: uwsgi
             - pkg: nginx
 
@@ -54,4 +54,3 @@ uwsgi-service:
         - require:
             - pip: uwsgi
             - pkg: nginx
-
