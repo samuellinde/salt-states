@@ -7,9 +7,9 @@ Vagrant::Config.run do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise32"
+  config.vm.box = "precise64"
   config.vm.share_folder "salt_file_root", "/srv/salt", Dir.pwd
-  #config.vm.share_folder "salt_pillar_root", "/srv/pillar", Dir.pwd + "/pillar/" 
+  #config.vm.share_folder "salt_pillar_root", "/srv/pillar", Dir.pwd + "/pillar/"
   config.vm.provision :salt do |salt|
     salt.minion_config = Dir.pwd + "/minion.conf"
     salt.run_highstate = true
@@ -18,7 +18,7 @@ Vagrant::Config.run do |config|
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
@@ -67,7 +67,7 @@ Vagrant::Config.run do |config|
   # end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
-  # path, and data_bags path (all relative to this Vagrantfile), and adding 
+  # path, and data_bags path (all relative to this Vagrantfile), and adding
   # some recipes and/or roles.
   #
   # config.vm.provision :chef_solo do |chef|
