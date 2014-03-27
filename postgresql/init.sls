@@ -12,10 +12,10 @@ postgresql:
     pkg.installed:
         - name: postgresql-9.1
     service.running:
-        - enabled: True
-        - watch: 
+        - enable: True
+        - watch:
             - file: /etc/postgresql/9.1/main/pg_hba.conf
-        - require: 
+        - require:
             - pkg: postgresql-9.1
 
 postgresql-9.1-dbg:
