@@ -4,7 +4,6 @@ packages:
             - python2.7-dev
             - libjpeg62-dev
             - python-dev
-            - git
             - python-virtualenv
             - python-pip
 
@@ -17,4 +16,3 @@ packages:
             - "postgres.host: 'localhost'"
             - "postgres.pass: ''"
             - "postgres.db: 'template0'"
-
